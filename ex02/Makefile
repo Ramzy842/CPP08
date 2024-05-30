@@ -6,7 +6,7 @@
 #    By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 00:51:34 by rchahban          #+#    #+#              #
-#    Updated: 2024/04/03 00:53:13 by rchahban         ###   ########.fr        #
+#    Updated: 2024/05/17 20:18:18 by rchahban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,11 +29,11 @@ NAME = main
 all: $(NAME)
 
 # Rule to generate the main executable from the object files
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) MutantStack.hpp
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 # Rule to generate the object files from the source files
-%.o: %.cpp
+%.o: %.cpp MutantStack.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 # Clean target to remove generated files
